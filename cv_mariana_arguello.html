@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CV de Mariana Belén Arguello - Técnico Superior en Preceptor. Experiencia en atención al cliente y educación.">
+    <meta name="keywords" content="preceptor, educación, atención al cliente, CV, curriculum vitae">
+    <meta name="author" content="Mariana Belén Arguello">
+    <title>CV - Mariana Belén Arguello | Técnico Superior Preceptor</title>
+    
+    <style>
+        /* Reset y fuentes */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            animation: fadeIn 1s ease-in;
+        }
+        
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .animate-slide {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.1;
+        }
+        
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #667eea;
+            border: 5px solid rgba(255,255,255,0.3);
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header .title {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            padding: 3rem;
+        }
+        
+        .left-column {
+            min-width: 0;
+        }
+        
+        .right-column {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            height: fit-content;
+        }
+        
+        /* Secciones */
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #667eea;
+            position: relative;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #764ba2;
+        }
+        
+        /* Resumen profesional */
+        .summary {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        /* Experiencia laboral */
+        .experience-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+        
+        .experience-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .experience-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .experience-company {
+            color: #667eea;
+            font-weight: 500;
+            margin: 0.25rem 0;
+        }
+        
+        .experience-date {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Educación */
+        .education-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .education-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .education-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1rem;
+        }
+        
+        .education-school {
+            color: #667eea;
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+        
+        /* Habilidades */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px;
+            transition: width 1s ease;
+            width: 0;
+        }
+        
+        /* Idiomas */
+        .language-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .language-level {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+        
+        /* Botones */
+        .buttons {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Media queries para responsive */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem 1rem;
+            }
+            
+            .header {
+                padding: 2rem 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .contact-item {
+                justify-content: center;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+                font-size: 2.5rem;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header .title {
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Media queries para impresión */
+        @media print {
+            body {
+                background: white;
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: none;
+            }
+            
+            .header {
+                background: #667eea !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                page-break-inside: avoid;
+            }
+            
+            .main-content {
+                grid-template-columns: 2fr 1fr;
+                padding: 1rem;
+            }
+            
+            .section {
+                break-inside: avoid;
+                margin-bottom: 1.5rem;
+            }
+            
+            .experience-item,
+            .education-item {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .buttons {
+                display: none;
+            }
+            
+            .btn {
+                display: none;
+            }
+            
+            a {
+                color: #333 !important;
+                text-decoration: none;
+            }
+            
+            .skill-progress {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+        
+        /* Efectos de scroll */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(102, 126, 234, 0.2);
+            z-index: 9999;
+        }
+        
+        .scroll-progress {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Indicador de scroll -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="profile-photo">
+                👩‍🎓
+            </div>
+            <h1>Mariana Belén Arguello</h1>
+            <p class="title">Técnico Superior en Preceptor</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:arguellomarianabelen3@gmail.com">arguellomarianabelen3@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <a href="tel:+543764797398">+54 3764 797398</a>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Posadas, Misiones, Argentina</span>
+                </div>
+                <div class="contact-item">
+                    <span>🔗</span>
+                    <a href="https://github.com/arguellomarianabelen3-dot" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Botones de acción -->
+        <div class="buttons">
+            <button class="btn" onclick="window.print()" aria-label="Imprimir CV">
+                🖨️ Descargar/Imprimir CV
+            </button>
+            <a href="mailto:arguellomarianabelen3@gmail.com" class="btn" aria-label="Enviar email">
+                ✉️ Contactar
+            </a>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="main-content">
+            <div class="left-column">
+                <!-- Resumen profesional -->
+                <section class="section" id="resumen">
+                    <h2>Resumen Profesional</h2>
+                    <div class="summary">
+                        Técnico Superior en Preceptor con sólida formación en educación y amplia experiencia en atención al cliente. Profesional comprometida con la educación y el desarrollo integral de los estudiantes, con habilidades desarrolladas en comunicación, resolución de conflictos y gestión administrativa. Experiencia práctica en diversos sectores que han fortalecido mis competencias interpersonales y mi capacidad de adaptación a diferentes entornos laborales.
+                    </div>
+                </section>
+
+                <!-- Experiencia laboral -->
+                <section class="section" id="experiencia">
+                    <h2>Experiencia Laboral</h2>
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">Atención al Cliente</div>
+                                <div class="experience-company">Tienda de Ropa (Temporada)</div>
+                            </div>
+                            <div class="experience-date">Dic 2024 - Ene 2025</div>
+                        </div>
+                        <ul>
+                            <li>Atención personalizada a clientes durante temporada alta</li>
+                            <li>Asesoramiento en productos y promociones</li>
+                            <li>Manejo de caja y gestión de inventario</li>
+                            <li>Resolución eficaz de consultas y reclamos</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">Niñera</div>
+                                <div class="experience-company">Servicio Particular</div>
+                            </div>
+                            <div class="experience-date">Ago 2024 - Nov 2024</div>
+                        </div>
+                        <ul>
+                            <li>Cuidado y supervisión de niños</li>
+                            <li>Apoyo en actividades educativas y recreativas</li>
+                            <li>Establecimiento de rutinas y límites saludables</li>
+                            <li>Comunicación efectiva con padres y tutores</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">Cajera</div>
+                                <div class="experience-company">El Puesto de Leo</div>
+                            </div>
+                            <div class="experience-date">Dic 2023 - Mar 2024</div>
+                        </div>
+                        <ul>
+                            <li>Manejo de caja registradora y transacciones</li>
+                            <li>Atención al cliente y resolución de consultas</li>
+                            <li>Control de inventario y reposición de productos</li>
+                            <li>Mantenimiento del orden y limpieza del área de trabajo</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">Cajera y Ayudante de Barra</div>
+                                <div class="experience-company">Brooklyn Disc</div>
+                            </div>
+                            <div class="experience-date">Ago 2023 - Nov 2023</div>
+                        </div>
+                        <ul>
+                            <li>Atención en caja y procesamiento de pagos</li>
+                            <li>Preparación y servicio de bebidas</li>
+                            <li>Atención al cliente en ambiente gastronómico</li>
+                            <li>Trabajo en equipo en horarios de alta demanda</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Educación -->
+                <section class="section" id="educacion">
+                    <h2>Educación y Formación</h2>
+                    
+                    <div class="education-item">
+                        <div class="education-title">Técnico Superior en Preceptor</div>
+                        <div class="education-school">Educación Terciaria</div>
+                        <p>Formación especializada en gestión educativa, normativas institucionales, mediación escolar y desarrollo integral del estudiante.</p>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-title">Educación Secundaria</div>
+                        <div class="education-school">Colegio Verbo Divino</div>
+                        <p>Formación integral con énfasis en valores humanísticos y preparación para la educación superior.</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="right-column">
+                <!-- Habilidades -->
+                <section class="section" id="habilidades">
+                    <h2>Habilidades</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Atención al Cliente</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Comunicación</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Gestión Educativa</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Resolución de Conflictos</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Trabajo en Equipo</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="92"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Adaptabilidad</span>
+                                <span>93%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="93"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Mediación Escolar</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Gestión Administrativa</span>
+                                <span>78%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="78"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Idiomas -->
+                <section class="section" id="idiomas">
+                    <h2>Idiomas</h2>
+                    <div class="language-item">
+                        <span>Español</span>
+                        <span class="language-level">Nativo</span>
+                    </div>
+                </section>
+
+                <!-- Enlaces profesionales -->
+                <section class="section" id="enlaces">
+                    <h2>Enlaces Profesionales</h2>
+                    <div style="text-align: center;">
+                        <a href="https://github.com/arguellomarianabelen3-dot" target="_blank" class="btn" style="margin: 0.5rem 0; display: block;">
+                            🔗 GitHub
+                        </a>
+                        <a href="mailto:arguellomarianabelen3@gmail.com" class="btn" style="margin: 0.5rem 0; display: block;">
+                            📧 Email
+                        </a>
+                        <a href="tel:+543764797398" class="btn" style="margin: 0.5rem 0; display: block;">
+                            📱 Teléfono
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animación de barras de progreso
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                setTimeout(() => {
+                    bar.style.width = width + '%';
+                }, 500);
+            });
+        }
+
+        // Animación de secciones al hacer scroll
+        function animateOnScroll() {
+            const sections = document.querySelectorAll('.section');
+            const windowHeight = window.innerHeight;
+
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const sectionHeight = section.offsetHeight;
+
+                if (sectionTop < windowHeight - sectionHeight / 4) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+
+        // Barra de progreso del scroll
+        function updateScrollProgress() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const progress = (scrollTop / scrollHeight) * 100;
+            
+            scrollProgress.style.width = progress + '%';
+        }
+
+        // Event listeners
+        window.addEventListener('load', () => {
+            animateSkillBars();
+            animateOnScroll();
+        });
+
+        window.addEventListener('scroll', () => {
+            animateOnScroll();
+            updateScrollProgress();
+        });
+
+        // Smooth scrolling para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Funcionalidad de descarga/impresión mejorada
+        function downloadCV() {
+            // Configurar la página para impresión
+            document.body.style.margin = '0';
+            document.body.style.padding = '0';
+            
+            // Abrir diálogo de impresión
+            window.print();
+        }
+
+        // Reemplazar el onclick del botón de descarga
+        document.querySelector('.btn[onclick="window.print()"]').onclick = downloadCV;
+    </script>
+</body>
+</html>
